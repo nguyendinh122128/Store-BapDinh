@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/dangnhap.css">
+    <script src="./js/dangnhap.js"></script>
+    <title>Đăng Nhập</title>
+    <style>
+        body{
+        width: 100%;
+        height: 100%;
+        background-image: url(./assets/img/backgroud_giay2.jpg);
+        background-size: 100%;
+        background-repeat: no-repeat;
+        
+        }
+        </style>
+</head>
+<body>
+    <form name="formdangnhap" action="" onsubmit="" >
+        <div id="khuon-dn"  >
+            <div class="header-dn">
+                <marquee class="title"  behavior="alternate" direction="right" scrollamount="7">Đăng Nhập</marquee>
+                <div class="close" id="closex" onclick="closedn();"><a href="./index.html">X</a></div>
+            </div>
+            <hr>
+            <div class="font-dn">
+                <div class="dn-ttin">
+                    <label for="taikhoandn" class="dn-label">Tài khoản :</label>
+                    <input placeholder="Tên đăng nhập,email,số điện thoại" type="text" class="ip-dn" id="taikhoandn" value="" >
+                </div>
+                <div class="dn-ttin">
+                    <label for="matkhaudn" class="dn-label">Mật khẩu :</label>
+                    <input placeholder="Mật khẩu" type="password" class="ip-dn" id="matkhaudn" value="" >
+                </div>
+                <div class="dn-ttin">
+                    <input type="checkbox"> <span>Nhớ tài khoản</span>
+                    </div>
+                <div class="dn-ttin">
+                <input type="button" class="sbm-dn" value="Đăng Nhập" onclick="dangnhap();" >
+                </div>
+            </div>
+            <hr>
+            <div class="footer-dn">
+                <div class="chuacotk">Chưa có tài khoản? <a onclick="chuacotk();" href="./dangky.html">Đăng ký</a></div>
+                <div class="quentk"><a href="">Quên tài khoản</a></div>
+            </div>
+        </div>
+    </form>
+</body>
+</html>

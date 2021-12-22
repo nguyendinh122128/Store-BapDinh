@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/font/themify-icons-font/themify-icons/themify-icons.css">
+    <link rel="stylesheet" href="./css/storeGiay.css">
+    <title>STORE GIÀY Chỉ Có Thể Nhìn</title>
+    <script>
+
+// -------------------Tạo sản phẩm--------------------
+function taosanpham() {
+    if(localStorage.getItem('sanpham')===null){
+        var danhsachsanpham = [
+             {idsanpham:'ad1', thuonghieu:'adidas' , img:'./assets/img/adidas/adidas1.jpg', tensanpham:'Giày Adidas 1',gia:'150000'}
+            ,{idsanpham:'ad2', thuonghieu:'adidas' , img:'./assets/img/adidas/adidas2.jpg', tensanpham:'Giày Adidas 2',gia:'1200000'}
+            ,{idsanpham:'ad3', thuonghieu:'adidas' , img:'./assets/img/adidas/adidas3.jpg', tensanpham:'Giày Adidas 3',gia:'1300000'}
+            ,{idsanpham:'ad4', thuonghieu:'adidas' , img:'./assets/img/adidas/adidas4.jpg', tensanpham:'Giày Adidas 4',gia:'500000'}
+            ,{idsanpham:'ad5', thuonghieu:'adidas' , img:'./assets/img/adidas/adidas5.jpg', tensanpham:'Giày Adidas 5',gia:'750000'}
+            ,{idsanpham:'ad6', thuonghieu:'adidas' , img:'./assets/img/adidas/adidas6.jpg', tensanpham:'Giày Adidas 6',gia:'890000'}
+            // ,{idsanpham:'ad7', thuonghieu:'adidas' , img:'./assets/img/adidas/adidas7.jpg', tensanpham:'adidas7',gia:'100000'}
+            // ,{idsanpham:'ad8', thuonghieu:'adidas' , img:'./assets/img/adidas/adidas8.jpg', tensanpham:'adidas8',gia:'100000'}
+            // ,{idsanpham:'ad9', thuonghieu:'adidas' , img:'./assets/img/adidas/adidas9.jpg', tensanpham:'adidas9',gia:'100000'}
+            // ,{idsanpham:'ad10', thuonghieu:'adidas' , img:'./assets/img/adidas/adidas10.jpg', tensanpham:'adidas10',gia:'100000'}
+            ,{idsanpham:'nk1', thuonghieu:'nike' , img:'./assets/img/nike/nike1.jpg', tensanpham:'Giày Nike 1',gia:'1000000'}
+            ,{idsanpham:'nk2', thuonghieu:'nike' , img:'./assets/img/nike/nike2.jpg', tensanpham:'Giày Nike 2',gia:'13000000'}
+            ,{idsanpham:'nk3', thuonghieu:'nike' , img:'./assets/img/nike/nike3.jpg', tensanpham:'Giày Nike 3',gia:'700000'}
+            ,{idsanpham:'nk4', thuonghieu:'nike' , img:'./assets/img/nike/nike4.jpg', tensanpham:'Giày Nike 4',gia:'999000'}
+            ,{idsanpham:'nk5', thuonghieu:'nike' , img:'./assets/img/nike/nike5.jpg', tensanpham:'Giày Nike 5',gia:'950000'}
+            ,{idsanpham:'nk6', thuonghieu:'nike' , img:'./assets/img/nike/nike6.jpg', tensanpham:'Giày Nike 6',gia:'200000'}
+            ,{idsanpham:'nk7', thuonghieu:'nike' , img:'./assets/img/nike/nike7.jpg', tensanpham:'Giày Nike 7',gia:'300000'}
+            ,{idsanpham:'nk8', thuonghieu:'nike' , img:'./assets/img/nike/nike8.jpg', tensanpham:'Giày Nike 8',gia:'330000'}
+            ,{idsanpham:'va1', thuonghieu:'vans' , img:'./assets/img/vans/vans1.jpg', tensanpham:'Giày Vans 1',gia:'720000'}
+            ,{idsanpham:'va2', thuonghieu:'vans' , img:'./assets/img/vans/vans2.jpg', tensanpham:'Giày Vans 2',gia:'690000'}
+            ,{idsanpham:'va3', thuonghieu:'vans' , img:'./assets/img/vans/vans3.jpg', tensanpham:'Giày Vans 3',gia:'850000'}
+            ,{idsanpham:'va4', thuonghieu:'vans' , img:'./assets/img/vans/vans4.jpg', tensanpham:'Giày Vans 4',gia:'10000000'}
+            // ,{idsanpham:'va5', thuonghieu:'vans' , img:'./assets/img/vans/vans5.jpg', tensanpham:'vans5',gia:'100000'}
+            // ,{idsanpham:'va6', thuonghieu:'vans' , img:'./assets/img/vans/vans6.jpg', tensanpham:'vans6',gia:'100000'}
+            // ,{idsanpham:'va7', thuonghieu:'vans' , img:'./assets/img/vans/vans7.jpg', tensanpham:'vans7',gia:'100000'}
+            // ,{idsanpham:'va8', thuonghieu:'vans' , img:'./assets/img/vans/vans8.jpg', tensanpham:'vans8',gia:'100000'}
+            // ,{idsanpham:'va9', thuonghieu:'vans' , img:'./assets/img/vans/vans9.jpg', tensanpham:'vans9',gia:'100000'}
+            // ,{idsanpham:'va10', thuonghieu:'vans' , img:'./assets/img/vans/vans10.jpg', tensanpham:'vans10',gia:'100000'}
+            // ,{idsanpham:'va11', thuonghieu:'vans' , img:'./assets/img/vans/vans11.jpg', tensanpham:'vans11',gia:'100000'}
+            // ,{idsanpham:'va12', thuonghieu:'vans' , img:'./assets/img/vans/vans12.jpg', tensanpham:'vans12',gia:'100000'}
+            ,{idsanpham:'co1', thuonghieu:'converse' , img:'./assets/img/converse/converse1.jpg', tensanpham:'giày Converse 1',gia:'650000'}
+            ,{idsanpham:'co2', thuonghieu:'converse' , img:'./assets/img/converse/converse2.jpg', tensanpham:'giày Converse 2',gia:'700000'}
+            ,{idsanpham:'co3', thuonghieu:'converse' , img:'./assets/img/converse/converse3.jpg', tensanpham:'giày Converse 3',gia:'100000'}
+            ,{idsanpham:'co4', thuonghieu:'converse' , img:'./assets/img/converse/converse4.jpg', tensanpham:'giày Converse 4',gia:'880000'}
+            ,{idsanpham:'co5', thuonghieu:'converse' , img:'./assets/img/converse/converse5.jpg', tensanpham:'giày Converse 5',gia:'100000'}
+            ,{idsanpham:'co6', thuonghieu:'converse' , img:'./assets/img/converse/converse6.jpg', tensanpham:'giày Converse 6',gia:'799000'}
+            ,{idsanpham:'co7', thuonghieu:'converse' , img:'./assets/img/converse/converse7.jpg', tensanpham:'giày Converse 7',gia:'100000'}
+            ,{idsanpham:'pk1', thuonghieu:'phukien' , img:'./assets/img/phukien/pk1.jpg', tensanpham:'Phụ kiện 1',gia:'10000'}
+            ,{idsanpham:'pk2', thuonghieu:'phukien' , img:'./assets/img/phukien/pk2.jpg', tensanpham:'Phụ kiện 2',gia:'50000'}
+            ,{idsanpham:'pk3', thuonghieu:'phukien' , img:'./assets/img/phukien/pk3.jpg', tensanpham:'Phụ kiện 3',gia:'100000'}
+            ,{idsanpham:'pk4', thuonghieu:'phukien' , img:'./assets/img/phukien/pk4.jpg', tensanpham:'Phụ kiện 4',gia:'2000'}
+            ,{idsanpham:'pk5', thuonghieu:'phukien' , img:'./assets/img/phukien/pk5.jpg', tensanpham:'Phụ kiện 5',gia:'30000'}
+            ,{idsanpham:'pk6', thuonghieu:'phukien' , img:'./assets/img/phukien/pk6.jpg', tensanpham:'Phụ kiện 6',gia:'55000'}
+            ,{idsanpham:'pk7', thuonghieu:'phukien' , img:'./assets/img/phukien/pk7.jpg', tensanpham:'Phụ kiện 7',gia:'100000'}
+
+        ];
+        localStorage.setItem('sanpham',JSON.stringify(danhsachsanpham));
+    }
+};
+
+// Phân trang
+
+danhsachsanpham = JSON.parse(localStorage.getItem('sanpham')); 
+let currenPage = 1;
+let perPage = 9;
+if(danhsachsanpham != null) {
+    var totolPage = Math.ceil(danhsachsanpham.length/perPage);
+}
+
+function nutPhantrang(){
+    document.getElementById('nutphantrang').innerHTML = "";
+        if(totolPage>1){
+        for(var i=1;i<=totolPage;i++){
+            document.getElementById('nutphantrang').innerHTML += `<button class="btn-phantrang" onclick="nhapTrang(${i})" >${i}</button>`
+        }
+    } 
+}
+
+function nhapTrang(i){
+    danhsachsanpham = JSON.parse(localStorage.getItem('sanpham'));
+    currenPage = i;
+    let star = (currenPage-1)*perPage;
+    let end = currenPage*perPage;
+    var sp = "";
+    console.log(star,end)
+    if(end>=danhsachsanpham.length){
+        end = danhsachsanpham.length;
+    }
+    for(var i=star;i<end;i++){
+        sp +=
+            `
+            <div class="col col-3">
+                <div class="card">
+                    <div class="img">
+                        <img src="${danhsachsanpham[i].img}" alt="">
+                    </div>
+                    <div class="tensp">
+                        <h3>${danhsachsanpham[i].tensanpham}</h3>
+                    </div>
+                    <div class="giasp">
+                        <p>Giá : ${parseFloat(danhsachsanpham[i].gia).toLocaleString('de-DE')}</p>
+                    </div>
+                    <div class="muahang">
+                        <button type="button" class="button btn-cart" onclick="muaHang()">Thêm Vào Giỏ</button>
+                    </div>
+                </div>
+            </div>
+            `
+    }
+    sp = `<h2 class="title">Danh mục sản phẩm</h2>
+        <div class="row">
+            ${sp}
+          </div>
+        `
+    document.getElementById('dssanpham').innerHTML = sp;
+}
+
+// Hiện thị sản phẩm user
+
+function hienThiSP() {
+    if(localStorage.getItem('sanpham')===null){
+        return false;
+    }
+    danhsachsanpham = JSON.parse(localStorage.getItem('sanpham'));
+    var sp = "";
+    for(var i=0;i<perPage;i++){
+        sp +=
+            `
+            <div class="col col-3">
+                <div class="card">
+                    <div class="img">
+                        <img src="${danhsachsanpham[i].img}" alt="">
+                    </div>
+                    <div class="tensp">
+                        <h3>${danhsachsanpham[i].tensanpham}</h3>
+                    </div>
+                    <div class="giasp">
+                        <p>Giá : ${parseFloat(danhsachsanpham[i].gia).toLocaleString('de-DE')}</p>
+                    </div>
+                    <div class="muahang">
+                        <button type="button" class="button btn-cart" onclick="muaHang()">Thêm Vào Giỏ</button>
+                    </div>
+                </div>
+            </div>
+            `
+    }
+    sp = `<h2 class="title">Danh mục sản phẩm</h2>
+        <div class="row">
+            ${sp}
+          </div>
+        `
+    document.getElementById('dssanpham').innerHTML = sp;
+}
+
+function hienThiBrand(obj){
+    var id = obj.id;
+    console.log(id);
+    var dssanpham = JSON.parse(localStorage.getItem('sanpham'));
+    switch (id) {
+        case 'ad':
+            var sp = "";
+            for(var i=0;i<danhsachsanpham.length;i++){
+                if(danhsachsanpham[i].thuonghieu=='adidas'){
+                    sp +=
+                        `
+                        <div class="col col-3">
+                            <div class="card">
+                                <div class="img">
+                                    <img src="${danhsachsanpham[i].img}" alt="">
+                                </div>
+                                <div class="tensp">
+                                    <h3>${danhsachsanpham[i].tensanpham}</h3>
+                                </div>
+                                <div class="giasp">
+                                    <p>Giá : ${danhsachsanpham[i].gia}</p>
+                                </div>
+                                <div class="muahang">
+                                    <button type="button" class="button btn-cart" onclick="muaHang('${danhsachsanpham[i].idsanpham}')">Thêm Vào Giỏ</button>
+                                </div>
+                            </div>
+                        </div>
+                        `
+                    }
+                }
+                sp = `<h2 class="title">Danh mục sản phẩm : Adidas</h2>
+                <div class="row">
+                    ${sp}
+                </div>
+                `
+                document.getElementById('content').innerHTML = sp;
+            break;
+        case 'ni':
+            var sp = "";
+            for(var i=0;i<dssanpham.length;i++){
+                if(dssanpham[i].thuonghieu=='nike'){
+                    sp +=
+                        `
+                        <div class="col col-3">
+                            <div class="card">
+                                <div class="img">
+                                    <img src="${danhsachsanpham[i].img}" alt="">
+                                </div>
+                                <div class="tensp">
+                                    <h3>${danhsachsanpham[i].tensanpham}</h3>
+                                </div>
+                                <div class="giasp">
+                                    <p>Giá : ${parseFloat(danhsachsanpham[i].gia).toLocaleString('de-DE')}</p>
+                                </div>
+                                <div class="muahang">
+                                    <button type="button" class="button btn-cart" onclick="muaHang()">Thêm Vào Giỏ</button>
+                                </div>
+                            </div>
+                        </div>
+                        `
+                    }
+                }
+                sp = `<h2 class="title">Danh mục sản phẩm : Nike</h2>
+                <div class="row">
+                    ${sp}
+                </div>
+                `
+                document.getElementById('content').innerHTML = sp;
+            break;
+        case 'va':
+            var sp = "";
+            for(var i=0;i<dssanpham.length;i++){
+                if(dssanpham[i].thuonghieu=='vans'){
+                    sp +=
+                        `
+                        <div class="col col-3">
+                            <div class="card">
+                                <div class="img">
+                                    <img src="${danhsachsanpham[i].img}" alt="">
+                                </div>
+                                <div class="tensp">
+                                    <h3>${danhsachsanpham[i].tensanpham}</h3>
+                                </div>
+                                <div class="giasp">
+                                    <p>Giá : ${parseFloat(danhsachsanpham[i].gia).toLocaleString('de-DE')}</p>
+                                </div>
+                                <div class="muahang">
+                                    <button type="button" class="button btn-cart" onclick="muaHang()">Thêm Vào Giỏ</button>
+                                </div>
+                            </div>
+                        </div>
+                        `
+                    }
+                }
+                sp = `<h2 class="title">Danh mục sản phẩm : Vans</h2>
+                <div class="row">
+                    ${sp}
+                </div>
+                `
+                document.getElementById('content').innerHTML = sp;
+            break;
+        case 'co':
+            var sp = "";
+            for(var i=0;i<dssanpham.length;i++){
+                if(dssanpham[i].thuonghieu=='converse'){
+                    sp +=
+                        `
+                        <div class="col col-3">
+                            <div class="card">
+                                <div class="img">
+                                    <img src="${danhsachsanpham[i].img}" alt="">
+                                </div>
+                                <div class="tensp">
+                                    <h3>${danhsachsanpham[i].tensanpham}</h3>
+                                </div>
+                                <div class="giasp">
+                                    <p>Giá : ${parseFloat(danhsachsanpham[i].gia).toLocaleString('de-DE')}</p>
+                                </div>
+                                <div class="muahang">
+                                    <button type="button" class="button btn-cart" onclick="muaHang()">Thêm Vào Giỏ</button>
+                                </div>
+                            </div>
+                        </div>
+                        `
+                    }
+                }
+                sp = `<h2 class="title">Danh mục sản phẩm : Converse</h2>
+                <div class="row">
+                    ${sp}
+                </div>
+                `
+                document.getElementById('content').innerHTML = sp;
+            break;
+        case 'pk':
+            var sp = "";
+            for(var i=0;i<dssanpham.length;i++){
+                if(dssanpham[i].thuonghieu=='phukien'){
+                    sp +=
+                        `
+                        <div class="col col-3">
+                            <div class="card">
+                                <div class="img">
+                                    <img src="${danhsachsanpham[i].img}" alt="">
+                                </div>
+                                <div class="tensp">
+                                    <h3>${danhsachsanpham[i].tensanpham}</h3>
+                                </div>
+                                <div class="giasp">
+                                    <p>Giá : ${parseFloat(danhsachsanpham[i].gia).toLocaleString('de-DE')}</p>
+                                </div>
+                                <div class="muahang">
+                                    <button type="button" class="button btn-cart" onclick="muaHang()">Thêm Vào Giỏ</button>
+                                </div>
+                            </div>
+                        </div>
+                        `
+                    }
+                }
+                sp = `<h2 class="title">Danh mục sản phẩm : Phụ kiện</h2>
+                <div class="row">
+                    ${sp}
+                </div>
+                `
+                document.getElementById('content').innerHTML = sp;
+            break;
+        default:
+            break;
+    }
+}
+
+// TÌm kiếm sản phẩm 
+
+ function timkiemsp(){
+     let tensp = document.getElementById('timkiemsp').value
+     console.log(tensp);
+     var danhsachsptim = [];
+     for(var i=0;i<danhsachsanpham.length;i++){
+         if(danhsachsanpham[i].tensanpham.toUpperCase().includes(tensp.toUpperCase())){
+             danhsachsptim.push(danhsachsanpham[i])
+         }
+     }
+     console.log(danhsachsptim);
+     var sp = "";
+     for(var i=0;i<danhsachsptim.length;i++){
+         sp +=
+             `
+             <div class="col col-3">
+                 <div class="card">
+                     <div class="img">
+                         <img src="${danhsachsptim[i].img}" alt="">
+                     </div>
+                     <div class="tensp">
+                         <h3>${danhsachsptim[i].tensanpham}</h3>
+                     </div>
+                     <div class="giasp">
+                         <p>Giá : ${parseFloat(danhsachsptim[i].gia).toLocaleString('de-DE')}</p>
+                     </div>
+                     <div class="muahang">
+                         <button type="button" class="button btn-cart" onclick="muaHang('${danhsachsptim[i].idsanpham}')">Thêm Vào Giỏ</button>
+                     </div>
+                 </div>
+             </div>
+             `
+     }
+     sp = `<h2 class="title">Danh mục sản phẩm</h2>
+         <div class="row">
+             ${sp}
+           </div>
+         `
+     document.getElementById('content').innerHTML = sp;
+ }
+
+
+function xuatHienGioHang(){
+    var gioHang = document.querySelector('.giohang')
+    // console.log(gioHang)
+    if(gioHang.style.display=='none'){
+        gioHang.style.display="";
+    }
+    else{
+        gioHang.style.display='none';
+    }
+    hienThiGioHang();
+}
+
+// Xóa giỏ hàng
+function dongGioHang() {
+    document.querySelector('.giohang').style.display = 'none'
+}
+// ---------------------Mua Hàng------------------
+function muaHang() {
+    if(confirm('Bạn phải đăng nhập mới có thể mua hàng')){
+        window.location.href = 'dangnhap.html';
+    }
+}
+// -------------------Đơn hàng--------------------
+function hienThiDonHang() {
+    document.getElementById('content').innerHTML = `
+                <h1>Bạn phải đăng nhập mới mua hàng :</h1>
+                <br>
+                <a class="text-black" href="./dangnhap.html" style="font-size: 30px;">Đăng nhập</a>
+                `;
+}
+
+window.onload = function(){
+    taosanpham();
+    hienThiSP();
+    nutPhantrang();
+}
+    </script>
+</head>
+<body>
+<div id="wrapper" >
+    <div id="header" class="text-white">
+        <!-- <div class="dn-dk"><a href="./dangky.html" class="text-white">Đăng Nhập/Đăng Ký</a></div> -->
+        <div id="dangnhapthanhcong" class="dn-dk"><a href="./dangnhap.html" class="text-white">Đăng Nhập</a><a href="./dangky.html" class="text-white">/Đăng Ký</a></div>
+        <div class="thuonghieu"><h2>BẮP STORE</h2></div>
+        <div class="icons">
+            <input type="text" placeholder="Tìm kiếm sản phẩm" list="topsp" id="timkiemsp" value="" onchange="timkiemsp();" >
+            <datalist id="topsp" >
+                <option value="adidas"></option>
+                <option value="nike"></option>
+                <option value="vans"></option>
+                <option value="converse"></option>
+                <option value="Phụ kiện"></option>
+            </datalist>
+            <i class="ti-search"></i>
+            <a href="#giohang" class="text-white"  onclick="xuatHienGioHang();">Giỏ Hàng<i class="ti-bag"></i></a>
+        </div>
+    </div>
+    <div id="nav">
+        <ul>
+            <li><a href="" class="text-black">TRANG CHỦ</a></li>
+            <li><a href="" class="text-black">GIỚI THIỆU</a></li>
+            <li onclick="hienThiDonHang()"><a href="#donhang" class="text-black">ĐƠN HÀNG</a></li>
+            <li><a href="#footer" class="text-black">LIÊN HỆ</a></li>
+        </ul>
+    </div>
+    <div id="banner">
+        <img src="./assets/img/banner1.jpg" alt="">
+        <div class="text-banner text-white">
+            <h3>BẮP STORE</h3>
+            <p>Uy Tín Sang Trọng</p>
+            <a href="#footer" class="a-banner text-black">LIÊN HỆ</a>
+        </div>
+    </div>
+    <div id="main" > 
+        <div class="giohang" style="display: none;" >
+            <div class="giohang-header"
+                ><p>Sản phẩm đã thêm</p>
+                <div class="dong-giohang" onclick="dongGioHang();" >X</div>
+            </div>
+            <div class="giohang-content" >
+                <h1>Bạn phải đăng nhập mới mua hàng :</h1>
+                <br>
+                <a class="text-black" href="./dangnhap.html" style="font-size: 30px;">Đăng nhập</a>
+            <!-- <ul>
+                <li>
+                    <img src="./assets/img/nike/nike4.jpg" alt="">
+                </li>
+                <li>Tên sản phẩm</li>
+                <li><p>10000</p></li>
+                <li><input type="number" name="" id="" value=""></li>
+                <li><p>10000</p></li>
+                <li><button>Xóa</button></li>
+            </ul>
+            <div style="clear: both;" ></div>-->
+        </div>
+            <div class="tonggia" id="tonggia"></div>
+            <div class="thanhtoan"><button id="btn-thanhtoan">Thanh Toán</button></div>
+        </div>
+        <div class="sidebar">
+            <ul>
+                <li onclick="hienThiBrand(this)" id="ad"><a href="#adidas" class="text-black">ADIDAS</a></li>
+                <li onclick="hienThiBrand(this)" id="ni"><a href="#nike" class="text-black">NIKE</a></li>
+                <li onclick="hienThiBrand(this)" id="va"><a href="#vans" class="text-black">VANS</a></li>
+                <li onclick="hienThiBrand(this)" id="co"><a href="#converse" class="text-black">CONVERSE</a></li>
+                <li onclick="hienThiBrand(this)" id="pk"><a href="#phukien" class="text-black">PHỤ KIỆN</a></li>
+            </ul>
+            <!-- <div class="khoanggia">
+                <div class="gia">
+                    <input type="radio" name="gia" id="">
+                    <span>Bé 500.000</span>
+                </div>
+                <div class="gia">
+                    <input type="radio" name="gia" id="">
+                    <span>500.000-1.000.000</span>
+                </div>
+                <div class="gia">
+                    <input type="radio" name="gia" id="">
+                    <span>Lớn 1.000.000</span>
+                </div>
+            </div> -->
+        </div>
+        <div class="content" id="content">
+                <div id="dssanpham">
+
+                </div>
+                <div id="nutphantrang" >
+                    
+                </div>
+        </div>
+        <div style="clear: both;" ></div>
+    </div>
+    <div id="footer">
+        <div class="row">
+            <div class="col col-3">
+                <div class="footer-content">
+                    <h3>GIỚI THIỆU</h3>
+                    <p>Chào mừng bạn đến với ngôi nhà Bắp! Tại đây, mỗi một dòng chữ, mỗi chi tiết và hình ảnh đều là những bằng chứng uy tín, và đang không ngừng phát triển lớn mạnh.</p>
+                </div>
+            </div>
+            <div class="col col-3">
+                <div class="footer-content">
+                    <h3>ĐỊA CHỈ</h3>
+                    <div class="icon">
+                        <i class="ti-location-pin">An Dương Vương P4 Q5</i>
+                    </div>
+                    <div class="icon">
+                    <i class="ti-mobile">113</i>
+                    </div>
+                    <div class="icon">
+                    <i class="ti-email"> bap@gmail.com</i>
+                    </div>
+                </div>
+            </div>
+            <div class="col col-3">
+                <div class="footer-content">
+                    <h3>MẠNG XÃ HỘI</h3>
+                    <div class="icon">
+                        <a class="text-white" href="https://www.facebook.com/profile.php?id=100017071415960"><i class="ti-facebook"></i></a>
+                        <a class="text-white" href="#"><i class="ti-instagram"></i></a>
+                        <a class="text-white" href="#"><i class="ti-skype"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-1 sub-footer">
+                <p>Thiết kế bởi nhóm : X LẬP TRÌNH WEB</p>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

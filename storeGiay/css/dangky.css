@@ -1,0 +1,167 @@
+    /*RESET*/
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    /* color:  #10ac84;
+    font-weight: 600; */
+}
+
+    /* Chung  */
+a{
+    text-decoration: none !important;
+}
+
+
+    /* 
+    Header
+    content
+    footer
+    */
+
+
+@keyframes comeModal {
+    from{
+        opacity: 0;
+        transform: translateY(-150px);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/* FONT ĐĂNG KÝ */
+#khuon-dk{
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0 ;
+    bottom: 0;
+    width: 500px;
+    height: 700px;
+    border: 1px solid black;
+    margin: auto;
+    animation: comeModal ease 1s;
+    background-color: aliceblue;
+    /* display: none; */
+    overflow: auto;
+}
+#khuon-dk::after{
+    content: "";
+    display: block;
+    clear: both;
+}
+    /*Đầu Đăng Ký  */
+.header-dn::after,
+.header-dk::after{
+    content: "";
+    display: block;
+    clear: both;
+}
+.header-dk{
+    height: 50px;
+    width: 100%;
+    position: relative;
+}
+.header-dn .title,
+.header-dk .title{
+    margin-left: 50px;
+    margin-right: 50px;
+    font-size: 20px;
+    line-height: 50px;
+}
+.header-dn .close,  
+.header-dk .close{
+    font-size: 18px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+}
+.font-dk{
+    width: 100%;
+    height: 560px;
+}
+.font-dk .note{
+    text-align: center;
+    padding: 10px 20px;
+}
+.font-dk .dk-ttin{
+    padding-top: 5px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 10px;
+}
+.font-dk .dk-label{
+    font-size: 18px;
+}
+.font-dk .ip-dk {
+    width: 100%;
+    padding: 5px;
+    border-radius: 4px;
+}
+.font-dk .error-span{
+    color: #e84118;
+}
+.footer-dk{
+    padding: 0 20px;
+}
+.footer-dk .sbm-dk{
+    width: 100%;
+    padding: 5px;
+    cursor: pointer;
+}
+.footer-bonus{
+    text-align: center;
+    padding-top: 10px;
+}
+
+
+/* FONT ĐĂNG NHẬP */
+/* #khuon-dn{
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0 ;
+    bottom: 0;
+    width: 300px;
+    height: 350px;
+    border: 1px solid black;
+    background-color: aliceblue;
+    margin: auto;
+    /* display: none;
+    animation: comeModal ease 1s;
+}
+
+        /* ĐÀU ĐĂNG NHẬP
+#khuon-dn .header-dn{
+    width: 100%;
+    height: 50px;
+}
+
+        /* THÂN ĐĂNG NHẬP
+#khuon-dn .font-dn{
+    width: 100%;
+    height: 250px;
+}
+.font-dn .dn-ttin{
+    padding-top: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 5px;
+}
+.font-dn .ip-dn{
+    width: 100%;
+    padding: 10px;
+    border-radius:4px ;
+}
+.font-dn .sbm-dn{
+    width: 100%;
+    padding: 5px;
+}
+.footer-dn{
+    text-align: center  ;
+} */

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/font/themify-icons-font/themify-icons/themify-icons.css">
+    <link rel="stylesheet" href="./css/admin.css">
+    <script src="./js/admin.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js"></script>
+    <title>ADMIN</title>
+</head>
+<body>
+<div id="wrapper">
+    <div id="header" class="text-white">
+        <div id="dangnhapthanhcong" class="dn-dk"><a href="./dangnhap.html" class="text-white">Đăng Nhập</a><a href="./dangky.html" class="text-white">/Đăng Ký</a></div>
+        <div class="thuonghieu"><h2>QUẢN LÍ BẮP STORE</h2></div>
+        <div class="icons">
+            <input type="text" placeholder="Tìm kiếm sản phẩm" value="" onchange="" >
+            <i class="ti-search"></i>
+            <a href="#" class="text-white">Giỏ Hàng<i class="ti-bag"></i></a>
+        </div>
+    </div>
+    <div>
+        <ul id="nav">
+            <li onclick="hienthitrangchu();"><a href="#trangchu" class="text-black">TRANG CHỦ</a></li>
+            <li onclick="hienthisanpham();">
+                <a href="#dssanpham" class="text-black">
+                    SẢN PHẨM
+                    <i class="nav-arrow-down ti-angle-down"></i>
+                    <ul class="subnav">
+                        <li><a class="text-black" href="#">ADIDAS</a></li>
+                        <li><a class="text-black" href="#">NIKE</a></li>
+                        <li><a class="text-black" href="#">VANS</a></li>
+                        <li><a class="text-black" href="#">CONVERSE</a></li>
+                        <li><a class="text-black" href="#">PHỤ KIỆN</a></li>
+                    </ul>
+                </a>
+            </li>
+            <li onclick="quanLiDonHang();"><a href="#donhang" class="text-black">ĐƠN HÀNG</a></li>
+            <li onclick="hienthinguoidung();"><a href="#dsnguoidung" class="text-black">KHÁCH HÀNG</a></li>
+            <li onclick="thongke();"><a href="#thongke" class="text-black">THỐNG KÊ</a></li>
+        </ul>
+    </div>
+    <div id="main">
+        <div class="sidebar">
+            <div class="header-sidebar text-white">
+                <h2>QUẢN LÍ</h2>
+            </div>
+            <div class="content-sidebar" id="content-sidebar">
+                <ul>
+                    <li onclick="hienthitrangchu();"><a class="text-white" href="#trangchu" class="text-black"><i class="ti-shift-right-alt"></i> TRANG CHỦ</a></li>
+                    <li onclick="hienthisanpham();"><a class="text-white" href="#dssanpham" class="text-black"><i class="ti-shift-right-alt"></i> SẢN PHẨM</a></li>
+                    <li onclick="quanLiDonHang();"><a class="text-white" href="#donhang" class="text-black"><i class="ti-shift-right-alt"></i> ĐƠN HÀNG</a></li>
+                    <li onclick="hienthinguoidung();"><a class="text-white" href="#dsnguoidung" class="text-black"><i class="ti-shift-right-alt"></i> KHÁCH HÀNG</a></li>
+                    <li onclick="thongke();"><a class="text-white" href="#thongke" class="text-black"><i class="ti-shift-right-alt"></i> THỐNG KÊ</a></li>
+                    <li><a class="text-white" href="#" class="text-black"><i class="ti-shift-right-alt"></i> THÔNG TIN</a></li>
+                </ul>
+            </div>
+        </div>
+        <div id="banner">
+            <img src="./assets/img/banner1.jpg" alt="">
+            <div class="text-banner text-white">
+                <h3>BẮP STORE</h3>
+                <p>Uy Tín , Sang Trọng</p>
+                <a href="#footer" class="a-banner text-black">LIÊN HỆ</a>
+            </div>
+        </div> 
+        <div class="content">
+            <div id="trangchu" style="display: none;" >
+                <div class="adidas" id="adidas">
+                    <img class="banner-content" src="./assets/img/banner_adidas.jpg" alt="">
+                </div>
+                <div class="nike" id="nike">
+                    <img class="banner-content" src="./assets/img/banner_nike.jpg" alt="">
+                </div>
+                <div class="vans" id="vans">
+                    <img class="banner-content" src="./assets/img/banner_vans.jpg" alt="">
+                </div>
+                <div class="converse" id="converse">
+                    <img class="banner-content" src="./assets/img/banner_converse.jpg" alt="">
+                </div>
+                <div class="phukien" id="phukien">
+                    <img class="banner-content" src="./assets/img/banner_phukien.jpg" alt="">
+                </div>
+            </div>
+            <div id="sanpham" style="display: none;">   
+                <div id="dssanpham"  >
+                    
+                </div>
+                <div id="nutphantrang" >
+                    <!-- <button class="btn-phantrang" >1</button>
+                    <button class="btn-phantrang" >2</button>
+                    <button class="btn-phantrang" >2</button>
+                    <button class="btn-phantrang" >2</button> -->
+                </div>
+                <div class="suasanpham" style="display: none;" >
+                    <!-- <div class="dongsuasanpham" onclick="dongSuaSanPham();" >X</div>
+                    <br>
+                    <h3 style="text-align: center;" >Sửa sản phẩm</h3>
+                    <br>
+                    <p>Sửa ID sản phẩm</p>
+                    <input type="text" name="" id="suaidsp" placeholder="ID SẢN PHẨm" value="">
+                    <p>Sửa thương hiệu sản phẩm</p>
+                    <select name="" id="suathuonghieusp">
+                        <option value="adidas">Adidas</option>
+                        <option value="nike">Nike</option>
+                        <option value="vans">Vans</option>
+                        <option value="converse">Converse</option>
+                        <option value="phukien">Phụ Kiện</option>
+                    </select>
+                    <br>
+                    <p>Sửa Tên sản phẩm</p>
+                    <input type="text" name="" id="suatensp" placeholder="Tên SẢN PHẨM MƠI" value="">
+                    <p>Sửa link ảnh sản phẩm</p>
+                    <input type="text" name="" id="sualinkanh" placeholder="LINK ảnh sản phẩm" value="">
+                    <p>Sửa giá sản phẩm</p>
+                    <input type="text" name="" id="suagiasp" placeholder="GIÁ SẢN PHẨM" value="">
+                    <button onclick="suasanpham();" >Sửa sản phẩm</button> -->
+                </div>
+                <div class="themsp" id="themsp"  >
+                    <br>
+                    <h3 style="text-align: center;" >Thêm sản phẩm</h3>
+                    <br>
+                    <p>ID sản phẩm mới</p>
+                    <input type="text" name="" id="idspmoi" placeholder="ID SẢN PHẨm" value="">
+                    <p>Thương hiệu sản phẩm mới</p>
+                    <!-- <input type="text" name="" id="thuonghieuspmoi" placeholder="THƯƠNG HIỆU SẢN PHẨM" value=""> -->
+                    <select name="" id="thuonghieuspmoi">
+                        <option value="adidas">Adidas</option>
+                        <option value="nike">Nike</option>
+                        <option value="vans">Vans</option>
+                        <option value="converse">Converse</option>
+                        <option value="phukien">Phụ Kiện</option>
+                    </select>
+                    <br>
+                    <p>Tên sản phẩm mới</p>
+                    <input type="text" name="" id="tenspmoi" placeholder="Tên SẢN PHẨM MƠI" value="">
+                    <p>Link ảnh sản phẩm mới</p>
+                    <input type="text" name="" id="linkanhmoi" placeholder="LINK ảnh sản phẩm" value="">
+                    <p>Giá sản phẩm mới</p>
+                    <input type="text" name="" id="giaspmoi" placeholder="GIÁ SẢN PHẨM" value="">
+                    <button onclick="themsanpham();" >Thêm sản phẩm</button>
+                </div>
+            </div>
+            <div id="dsnguoidung" style="display: none;" >
+            
+            </div>
+            <div class="quanlidon"  >
+
+            </div>
+        </div>
+    </div>
+    <div class="clear"></div>
+    <div id="footer">
+        <div class="main-footer text-white">
+            <ul class="content-footer">
+                <li>
+                    <h3>GIỚI THIỆU</h3>
+                    <p>Chào mừng bạn đến với ngôi nhà Bắp! Tại đây, mỗi một dòng chữ, mỗi chi tiết và hình ảnh đều là những bằng chứng uy tín, và đang không ngừng phát triển lớn mạnh.</p>
+                </li>
+                <li>
+                    <h3>ĐỊA CHỈ</h3>
+                        <i class="ti-location-pin">An Dương Vương P4 Q5</i>
+                        <i class="ti-mobile">113</i>
+                        <i class="ti-email"> bap@gmail.com</i>
+                </li>
+                <li>
+                    <h3>MẠNG XÃ HỘI</h3>
+                    <a class="text-white" href="#"><i class="ti-facebook"></i></a>
+                    <a class="text-white" href="#"><i class="ti-instagram"></i></a>
+                    <a class="text-white" href="#"><i class="ti-skype"></i></a>
+                </li>
+            </ul>
+        </div>
+        <div class="sp-footer text-white">
+            <p>Thiết kế bởi nhóm : X LẬP TRÌNH WEB</p>
+        </div>
+    </div>
+</div>
+<script>
+    taosanpham();
+</script>
+</body>
+</html>

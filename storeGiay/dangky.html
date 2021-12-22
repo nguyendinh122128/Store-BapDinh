@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/dangky.css">
+    <script src="./js/dangky.js"></script>
+    <title>Đăng Ký</title>
+    <style>
+    body{
+    width: 100%;
+    height: 100%;
+    background-image: url(./assets/img/backgroud_giay2.jpg);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <form name="formdangky" method="post" action="">
+
+            <div id="khuon-dk">
+                <div class="header-dk">
+                    <marquee class="title" behavior="alternate" direction="right" scrollamount="7">Đăng Ký</marquee>
+                    <div class="close" id="closex" onclick="closedk();"><a href="./index.html">X</a></div>
+                </div>
+                <hr>
+                <div class="font-dk">
+                    <div class="note">Nhập Thông Tin của Bạn
+                    </div>
+                    <div class="dk-ttin">
+                        <label for="hoten" class="dk-label">Nhập Tên Đầy Đủ</label>
+                        <input class="ip-dk" type="text" name="txthoten" placeholder="Nhập Họ Tên Bạn" id="hoten" value="" >
+                        <span class="error-hoten error-span"></span>
+                    </div>
+                    <div class="dk-ttin">
+                        <label for="diachi" class="dk-label">Nhập Địa Chỉ</label>
+                        <input class="ip-dk" type="text" name="txtdiachi" placeholder="Nhập Địa Chỉ Bạn" id="diachi" value="" >
+                        <span class="error-diachi error-span"></span>
+                    </div>
+                    <div class="dk-ttin">
+                        <label for="sdt" class="dk-label">Nhập Số Điện Thoại</label>
+                        <input class="ip-dk" type="text" name="txtsdt" placeholder="Nhập Số Điện Thoại Bạn" id="sdt"  value="" >
+                        <span class="error-sdt error-span"></span>
+                    </div><div class="dk-ttin">
+                        <label for="email" class="dk-label">Nhập Email</label>
+                        <input class="ip-dk" type="email" name="txtemail" placeholder="Nhập Email Thoại Bạn" id="email"  value="" >
+                        <span class="error-email error-span"></span>
+                    </div>
+                    <div class="dk-ttin">
+                        <input type="radio" name="txtgioitinh" value="Nam" >
+                        <span>Nam</span>
+                        <input type="radio" name="txtgioitinh" value="Nữ" >
+                        <span>Nữ</span>
+                        <input type="radio" name="txtgioitinh" value="Khác" >
+                        <span>Khác</span>
+                        <span class="error-gioitinh error-span"></span>
+                    </div>
+                    <div class="dk-ttin">
+                        <label for="tendangnhap" class="dk-label">Nhập Tên Đăng Nhập</label>
+                        <input class="ip-dk" type="text" name="txttendangnhap" placeholder="Nhập Tên Đăng Nhập" id="tendangnhap"  value="" >
+                        <span class="error-tendangnhap error-span"></span>
+                    </div>
+                    <div class="dk-ttin">
+                        <label for="matkhau" class="dk-label">Nhập Mật Khẩu</label>
+                        <input class="ip-dk" type="password" name="txtmatkhau" placeholder="Nhập Mật Khẩu" id="matkhau"  value="" >
+                        <span class="error-matkhau error-span"></span>
+                    </div>
+                    <div class="dk-ttin">
+                        <label for="nlmatkhau" class="dk-label">Nhập Lại Mật Khẩu</label>
+                        <input class="ip-dk" type="password" name="txtnlmatkhau" placeholder="Nhập Lại Mật Khẩu" id="nlmatkhau"  value="" >
+                        <span class="error-nlmatkhau error-span"></span>
+                    </div>
+                </div>
+                
+                <div class="footer-dk">
+                    <!-- <input class="ipdk" type="submit" value="ĐĂNG KÝ" onclick=""/> -->
+                    <input type="button" class="sbm-dk" value="Đăng Ký tài Khoản" onclick="createUser();" >
+                </div>
+                <div class="footer-bonus">
+                    <p class="dacotk">
+                        Bạn có tài khoản rồi! <a href="./dangnhap.html" onclick="dacotk();" >Đăng Nhập</a>
+                    </p>
+                    <p class="dkhoang-dvu"><a href="#">Điều Khoản </a>& <a href="#">Dịch Vụ</a></p>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div style="clear: both;" ></div>
+<body>
+</html>

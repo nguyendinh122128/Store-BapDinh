@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/font/themify-icons-font/themify-icons/themify-icons.css">
+    <link rel="stylesheet" href="./css/storeGiay.css">
+    <script src="./js/taoSanPham.js"></script>
+    <script src="./js/storeGiay.js"></script>
+    <script src="./js/giohang.js"></script>
+    <!-- CHI TIẾT SẢN PHẨM -->
+    <link rel="stylesheet" href="./css/product-detail.css" type="text/css">
+    <title>STORE GIÀY</title>
+</head>
+<body>
+<div id="wrapper" >
+    <div id="header" class="text-white">
+        <!-- <div class="dn-dk"><a href="./dangky.html" class="text-white">Đăng Nhập/Đăng Ký</a></div> -->
+        <div class="dn-dk" id="dangnhapthanhcong"><a href="./index.html" class="text-white">Đăng xuất</a></div>
+        <div class="thuonghieu"><h2>BẮP STORE</h2></div>
+        <div class="icons">
+            <input type="text" placeholder="Tìm kiếm sản phẩm" list="topsp" id="timkiemsp" value="" onchange="timkiemsp();" >
+            <datalist id="topsp" >
+                <option value="adidas"></option>
+                <option value="nike"></option>
+                <option value="vans"></option>
+                <option value="converse"></option>
+                <option value="Phụ kiện"></option>
+            </datalist>
+            <i class="ti-search"></i>
+            <a href="#giohang" class="text-white"  onclick="xuatHienGioHang();">Giỏ Hàng<i class="ti-bag"></i>&ensp;<span id="demSanPham">0</span></a>
+        </div>
+    </div>
+    <div id="nav">
+        <ul>
+            <li><a href="" class="text-black">TRANG CHỦ</a></li>
+            <li onclick="hienthitrangchu();"><a href="#gioithieu" class="text-black">GIỚI THIỆU</a></li>
+            <li onclick="hienThiDonHang()"><a href="#content" class="text-black">ĐƠN HÀNG</a></li>
+            <li><a href="#footer" class="text-black">LIÊN HỆ</a></li>
+        </ul>
+    </div>
+    <div id="banner">
+        <img src="./assets/img/banner1.jpg" alt="">
+        <div class="text-banner text-white">
+            <h3>BẮP STORE</h3>
+            <p>Uy Tín Sang Trọng</p>
+            <a href="#footer" class="a-banner text-black">LIÊN HỆ</a>
+        </div>
+    </div>
+    <div class="content">
+        <div id="trangchu" style="display: none;" >
+            <div class="adidas" id="adidas">
+                <img class="banner-content" src="./assets/img/banner_adidas.jpg" alt="">
+            </div>
+            <div class="nike" id="nike">
+                <img class="banner-content" src="./assets/img/banner_nike.jpg" alt="">
+            </div>
+            <div class="vans" id="vans">
+                <img class="banner-content" src="./assets/img/banner_vans.jpg" alt="">
+            </div>
+            <div class="converse" id="converse">
+                <img class="banner-content" src="./assets/img/banner_converse.jpg" alt="">
+            </div>
+            <div class="phukien" id="phukien">
+                <img class="banner-content" src="./assets/img/banner_phukien.jpg" alt="">
+            </div>
+        </div>
+    <div id="main" > 
+        <div class="giohang" style="display: none;" >
+            <div class="giohang-header">
+                <p class="sanPhamDaThem">Sản phẩm đã thêm</p>
+                <div class="dong-giohang" onclick="dongGioHang();" >X</div>
+            </div>
+            <div class="giohang-content" >
+            <!-- <ul>
+                <li>
+                    <img src="./assets/img/nike/nike4.jpg" alt="">
+                </li>
+                <li>Tên sản phẩm</li>
+                <li><p>10000</p></li>
+                <li><input type="number" name="" id="" value=""></li>
+                <li><p>10000</p></li>
+                <li><button>Xóa</button></li>
+            </ul>
+            <div style="clear: both;" ></div>-->
+        </div>
+            <div class="tonggia" id="tonggia"></div>
+            <div class="thanhtoan"><button id="btn-thanhtoan" onclick="thanhToan();" >Thanh Toán</button></div>
+        </div>
+        <div class="sidebar">
+            <ul>
+                <li onclick="hienThiBrand(this)" id="ad"><a href="javascript:void(0)" class="text-black">ADIDAS</a></li>
+                <li onclick="hienThiBrand(this)" id="ni"><a href="javascript:void(0)" class="text-black">NIKE</a></li>
+                <li onclick="hienThiBrand(this)" id="va"><a href="javascript:void(0)" class="text-black">VANS</a></li>
+                <li onclick="hienThiBrand(this)" id="co"><a href="javascript:void(0)" class="text-black">CONVERSE</a></li>
+                <li onclick="hienThiBrand(this)" id="pk"><a href="javascript:void(0)" class="text-black">PHỤ KIỆN</a></li>
+            </ul>
+            <!-- <div class="khoanggia">
+                <div class="gia">
+                    <input type="radio" name="gia" id="">
+                    <span>Bé 500.000</span>
+                </div>
+                <div class="gia">
+                    <input type="radio" name="gia" id="">
+                    <span>500.000-1.000.000</span>
+                </div>
+                <div class="gia">
+                    <input type="radio" name="gia" id="">
+                    <span>Lớn 1.000.000</span>
+                </div>
+            </div> -->
+        </div>
+        <!-- ------------------CHI TIẾT SẢN PHẨM------------------------ -->
+        <div class="chitiet" style="display: none;">
+            
+        </div>
+        <div class="content" id="content">
+                <div id="dssanpham">
+
+                </div>
+                <div id="nutphantrang" >
+                    
+                </div>
+        </div>
+        <div style="clear: both;" ></div>
+    </div>
+    <div id="footer">
+        <div class="row">
+            <div class="col col-3">
+                <div class="footer-content">
+                    <h3>GIỚI THIỆU</h3>
+                    <p>Chào mừng bạn đến với ngôi nhà Bắp! Tại đây, mỗi một dòng chữ, mỗi chi tiết và hình ảnh đều là những bằng chứng uy tín, và đang không ngừng phát triển lớn mạnh.</p>
+                </div>
+            </div>
+            <div class="col col-3">
+                <div class="footer-content">
+                    <h3>ĐỊA CHỈ</h3>
+                    <div class="icon">
+                        <i class="ti-location-pin">An Dương Vương P4 Q5</i>
+                    </div>
+                    <div class="icon">
+                    <i class="ti-mobile">113</i>
+                    </div>
+                    <div class="icon">
+                    <i class="ti-email"> bap@gmail.com</i>
+                    </div>
+                </div>
+            </div>
+            <div class="col col-3">
+                <div class="footer-content">
+                    <h3>MẠNG XÃ HỘI</h3>
+                    <div class="icon">
+                        <a class="text-white" href="https://www.facebook.com/profile.php?id=100017071415960"><i class="ti-facebook"></i></a>
+                        <a class="text-white" href="#"><i class="ti-instagram"></i></a>
+                        <a class="text-white" href="#"><i class="ti-skype"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-1 sub-footer">
+                <p>Thiết kế bởi nhóm : X LẬP TRÌNH WEB</p>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
